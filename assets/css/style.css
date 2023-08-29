@@ -135,6 +135,10 @@ h6 {
   background: #18d26e;
 }
 
+.logo-hidden {
+  display: none !important;
+}
+
 @media (max-width: 992px) {
   #header h1 {
     font-size: 36px;

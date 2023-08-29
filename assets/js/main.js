@@ -251,3 +251,37 @@
   new PureCounter();
 
 })()
+
+ // Get the logo element
+ const logo = document.getElementById("logo");
+  
+ // Get all navigation links
+ const navLinks = document.querySelectorAll(".nav-link");
+
+ // Function to toggle logo visibility based on the active navigation link
+ function toggleLogoVisibility() {
+   const isHomeActive = navLinks[0].classList.contains("active");
+   if (isHomeActive) {
+     logo.classList.add("logo-hidden");
+   } else {
+     logo.classList.remove("logo-hidden");
+   }
+ }
+
+ // Initial call to set the initial state
+ toggleLogoVisibility();
+
+ // Attach an event listener to each navigation link
+ navLinks.forEach(link => {
+   link.addEventListener("click", toggleLogoVisibility);
+ });
+
+ form = document.getElementById("form");
+ form.addEventListener("submit", function(event) {
+   event.preventDefault(); 
+   const name = document.getElementById("name").value;
+   const message = document.getElementById("subject").value; // Use the correct id "subject"
+   let waUrl = `https://wa.me/918281977675?text=Hello%20I%20am%20${name}.%20${message}`;
+   window.open(waUrl, '_blank');
+ });
+ 
